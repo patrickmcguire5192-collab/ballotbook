@@ -35,13 +35,23 @@ function OddsBars({ odds, race }) {
   );
 }
 
+const STATUS_LABEL = {
+  presumptive: "presumptive nominee",
+  primary_pending: "primary pending",
+};
+
 function CandidateCard({ c }) {
   return (
     <div className={`candidate p-border-${c.party.toLowerCase()}`}>
       <div className="candidate-head">
         <span className="candidate-name">{c.name}</span>
-        <span className={`party-chip p-${c.party.toLowerCase()}`}>
-          {PARTY_LABEL[c.party] ?? c.party}
+        <span className="candidate-chips">
+          {STATUS_LABEL[c.status] && (
+            <span className="status-chip">{STATUS_LABEL[c.status]}</span>
+          )}
+          <span className={`party-chip p-${c.party.toLowerCase()}`}>
+            {PARTY_LABEL[c.party] ?? c.party}
+          </span>
         </span>
       </div>
       <p className="candidate-bio">{c.bio}</p>
@@ -110,6 +120,9 @@ export default function StatePanel({ usps, stateName, onOdds }) {
           <section className="panel-section">
             <h3>Senate 2026</h3>
             <div className="race-status">{race.status}</div>
+            {race.primaryNote && (
+              <div className="primary-note">{race.primaryNote}</div>
+            )}
             <p className="race-summary">{race.summary}</p>
 
             {oddsErr && (

@@ -125,24 +125,26 @@ export default function App() {
             <span className="legend-note">deeper = more confident</span>
           </div>
 
-          <div className="board">
-            <h3>Closest races on the board</h3>
-            {board.length === 0 && <div className="odds-loading">Loading markets…</div>}
-            {board.map((r) => (
-              <button
-                key={r.usps}
-                className={`board-row ${selected === r.usps ? "board-row--active" : ""}`}
-                onClick={() => setSelected(r.usps)}
-              >
-                <span className="board-state">{NAME_BY_USPS[r.usps]}</span>
-                <span className={`board-fav p-${r.party}`}>{r.label}</span>
-                <span className="board-prob">{(r.prob * 100).toFixed(0)}¢</span>
-                <span className={`board-rating rating-${ratingFromProb(r.prob).toLowerCase()}`}>
-                  {ratingFromProb(r.prob)}
-                </span>
-              </button>
-            ))}
-          </div>
+          {!selected && (
+            <div className="board">
+              <h3>Closest races on the board</h3>
+              {board.length === 0 && <div className="odds-loading">Loading markets…</div>}
+              {board.map((r) => (
+                <button
+                  key={r.usps}
+                  className="board-row"
+                  onClick={() => setSelected(r.usps)}
+                >
+                  <span className="board-state">{NAME_BY_USPS[r.usps]}</span>
+                  <span className={`board-fav p-${r.party}`}>{r.label}</span>
+                  <span className="board-prob">{(r.prob * 100).toFixed(0)}¢</span>
+                  <span className={`board-rating rating-${ratingFromProb(r.prob).toLowerCase()}`}>
+                    {ratingFromProb(r.prob)}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </section>
 
         <aside className="panel-col">
