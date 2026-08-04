@@ -1,0 +1,46 @@
+:root {
+  --bg: #12151b;
+  --bg-raised: #191d26;
+  --bg-panel: #1e232e;
+  --border: #2c3342;
+  --text: #e8ebf1;
+  --text-dim: #98a0b3;
+  --text-faint: #6b7386;
+  --map-none: #262b36;
+  --dem: #3874f5;
+  --gop: #e34242;
+  --ind: #dea83e;
+  --accent: #56d364;
+
+  font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system,
+    sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
