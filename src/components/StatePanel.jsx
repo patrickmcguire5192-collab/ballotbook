@@ -7,6 +7,7 @@ import {
 } from "../data/races.js";
 import { fetchEventOdds } from "../services/polymarket.js";
 import { outcomeParty } from "../services/party.js";
+import { checkRace } from "../services/staleness.js";
 
 const PARTY_LABEL = { D: "Democrat", R: "Republican", I: "Independent" };
 
@@ -107,6 +108,9 @@ export default function StatePanel({ usps, stateName, onOdds }) {
 
   const houseSeats = HOUSE_DISTRICTS[usps];
   const houseNote = HOUSE_NOTES[usps];
+  // Free: compares the dated seed against the calendar and the live odds we
+  // already fetched. No extra network, no background job.
+  const stale = checkRace(usps, race, odds);
 
   return (
     <div className="panel" key={usps}>
@@ -120,6 +124,7 @@ export default function StatePanel({ usps, stateName, onOdds }) {
           <section className="panel-section">
             <h3>Senate 2026</h3>
             <div className="race-status">{race.status}</div>
+            {stale && <div className="stale-flag">⚠ {stale.message}</div>}
             {race.primaryNote && (
               <div className="primary-note">{race.primaryNote}</div>
             )}

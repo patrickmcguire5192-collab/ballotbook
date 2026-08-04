@@ -1366,6 +1366,27 @@ export const SENATE_RACES = {
   },
 };
 
+// Primary dates for races whose fields were NOT settled as of SNAPSHOT_DATE.
+// The staleness detector compares these against today to flag seed data the
+// calendar has outrun — see src/services/staleness.js. Remove a state's entry
+// once its race is updated to real nominees (no more *_pending candidates).
+// After the last date here (DE, Sep 15) every field is set until Nov 3.
+export const PRIMARY_DATES = {
+  KS: "2026-08-04",
+  VA: "2026-08-04",
+  MI: "2026-08-04",
+  TN: "2026-08-06",
+  MN: "2026-08-11",
+  SC: "2026-08-11", // special GOP primary after Graham's death; runoff ~Aug 25
+  FL: "2026-08-18",
+  WY: "2026-08-18",
+  OK: "2026-08-25", // Democratic runoff
+  MA: "2026-09-01",
+  NH: "2026-09-08",
+  RI: "2026-09-08",
+  DE: "2026-09-15",
+};
+
 // States with NO 2026 Senate race (Class 1/3 seats not up). Shown in the
 // panel with House info only.
 export const NO_SENATE_RACE = new Set([

@@ -298,6 +298,38 @@
   margin: -2px 0 8px;
 }
 
+/* ============ staleness flags ============ */
+.stale-banner {
+  margin: 0 22px;
+  margin-top: 14px;
+  padding: 9px 14px;
+  border: 1px solid var(--ind);
+  border-radius: 8px;
+  background: rgba(222, 168, 62, 0.08);
+  color: var(--ind);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.stale-link {
+  background: none;
+  border: none;
+  padding: 0 3px 0 0;
+  color: var(--ind);
+  font-weight: 650;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.stale-flag {
+  font-size: 12px;
+  color: var(--ind);
+  border-left: 2px solid var(--ind);
+  padding-left: 8px;
+  margin: 6px 0 8px;
+  line-height: 1.45;
+}
+
 .candidate-chips {
   display: flex;
   gap: 6px;

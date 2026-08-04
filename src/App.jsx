@@ -4,6 +4,7 @@ import StatePanel from "./components/StatePanel.jsx";
 import { SENATE_RACES } from "./data/races.js";
 import { fetchEventOdds, fetchNationalOdds } from "./services/polymarket.js";
 import { outcomeParty } from "./services/party.js";
+import { checkAll } from "./services/staleness.js";
 import { FIPS } from "./data/fips.js";
 import "./App.css";
 
@@ -96,6 +97,10 @@ export default function App() {
     return out;
   }, [favorites]);
 
+  // Calendar-only sweep: which races have had their primary happen while the
+  // seed still lists unresolved candidates. Costs nothing — pure date compare.
+  const staleRaces = useMemo(() => checkAll(SENATE_RACES), []);
+
   const board = useMemo(() => {
     return Object.entries(favorites)
       .map(([usps, f]) => ({ usps, ...f }))
@@ -112,6 +117,24 @@ export default function App() {
         </div>
         <NationalStrip national={national} />
       </header>
+
+      {staleRaces.length > 0 && (
+        <div className="stale-banner">
+          ⚠ {staleRaces.length} race{staleRaces.length > 1 ? "s" : ""} had a
+          primary since this snapshot —{" "}
+          {staleRaces.map((s, i) => (
+            <button
+              key={s.usps}
+              className="stale-link"
+              onClick={() => setSelected(s.usps)}
+            >
+              {NAME_BY_USPS[s.usps]}
+              {i < staleRaces.length - 1 ? "," : ""}
+            </button>
+          ))}{" "}
+          may show an out-of-date candidate list. Odds are unaffected.
+        </div>
+      )}
 
       <main className="layout">
         <section className="map-col">
