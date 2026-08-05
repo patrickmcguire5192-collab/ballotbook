@@ -11,11 +11,12 @@
 // ratingFromProb in App) so they can never go stale.
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
-// render as chips (several primaries are still ahead: KS/VA/MI Aug 4, TN
-// Aug 6, MN & SC-special Aug 11, FL/WY Aug 18, OK-D runoff Aug 25, MA Sep 1,
-// NH/RI Sep 8, DE Sep 15).
+// render as chips (several primaries are still ahead: MI Aug 4 [result too
+// close to call / not yet confirmed by AP as of Aug 5], TN Aug 6, MN &
+// SC-special Aug 11, FL/WY Aug 18, OK-D runoff Aug 25, MA Sep 1, NH/RI
+// Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-03";
+export const SNAPSHOT_DATE = "2026-08-05";
 
 export const SENATE_RACES = {
   AL: {
@@ -392,14 +393,13 @@ export const SENATE_RACES = {
     status: "Incumbent Roger Marshall (R) seeking a second term",
     polymarketSlug: "kansas-senate-election-winner",
     primaryNote:
-      "Primaries Aug 4 — an 11-candidate Democratic field with megachurch pastor Adam Hamilton leading; Marshall faces token opposition.",
+      "Primary was Aug 4 — Hamilton won the Democratic nomination with about 45% in an 11-candidate field (Schmidt finished in single digits); Marshall won the GOP primary with about 79% over Pond Naramore.",
     summary:
-      "Likely Republican, but Democrats see an outside shot: Adam Hamilton, founding pastor of the largest United Methodist congregation in the U.S., set a Kansas fundraising pace (~$3.7M) and hypothetical polls have run single-digits.",
+      "Likely Republican, but Democrats see an outside shot: Adam Hamilton, founding pastor of the largest United Methodist congregation in the U.S., won the Democratic nomination after setting a Kansas fundraising pace (~$3.7M); pre-primary polling had Marshall leading by high single digits.",
     candidates: [
       {
         name: "Roger Marshall",
         party: "R",
-        status: "presumptive",
         bio: "Incumbent since 2021 and an OB-GYN who previously represented KS-01 in the House. Endorsed by Trump, AIPAC, and the Senate Conservatives Fund; ~$5.5M raised as of March.",
         platform: [
           "Support for the Trump administration's agenda",
@@ -410,22 +410,11 @@ export const SENATE_RACES = {
       {
         name: "Adam Hamilton",
         party: "D",
-        status: "primary_pending",
-        bio: "Founding senior pastor of Church of the Resurrection in Leawood (~22,000 members, the largest UMC congregation in the U.S.). Entered April 30, 2026 after exploring an independent bid; leads primary polling at ~30% in an 11-way field with ~$3.7M raised by June 30.",
+        bio: "Founding senior pastor of Church of the Resurrection in Leawood (~22,000 members, the largest UMC congregation in the U.S.). Entered April 30, 2026 after exploring an independent bid; won the Aug 4 primary with ~$3.7M raised by June 30.",
         platform: [
           "'Independent-minded Democrat' leading from the center",
           "Service above self — 'country before party'",
           "Consensus-building modeled on a politically mixed congregation",
-        ],
-      },
-      {
-        name: "Patrick Schmidt",
-        party: "D",
-        status: "primary_pending",
-        bio: "Kansas state senator from Topeka (elected 2024) and former Navy intelligence officer; sixth-generation Kansan and 2022 KS-02 nominee.",
-        platform: [
-          "Lowering health-care costs; Medicaid expansion for ~150,000 Kansans",
-          "Constitutional-oath leadership framing",
         ],
       },
     ],
@@ -1270,14 +1259,13 @@ export const SENATE_RACES = {
     status: "Incumbent Mark Warner (D) seeking a fourth term",
     polymarketSlug: "virginia-senate-election-winner",
     primaryNote:
-      "Primaries Aug 4 — Warner heavily favored; a three-way GOP race (Farington, Mizusawa, Williams) with no clear frontrunner.",
+      "Primary was Aug 4 — Warner was unopposed; Mizusawa won the GOP primary with 50.71%, beating David Williams (29.5%) and Kim Farington (19.8%).",
     summary:
-      "Safe Democratic. Warner sits on a $25M+ war chest; the GOP field is low-profile.",
+      "Safe Democratic. Warner sits on a $25M+ war chest; Mizusawa, a retired Army major general, emerged from a low-profile GOP field.",
     candidates: [
       {
         name: "Mark Warner",
         party: "D",
-        status: "presumptive",
         bio: "Senator since 2009 and former governor (2002–2006); telecom businessman before politics and top Democrat on Senate Intelligence. $25M+ war chest.",
         platform: [
           "Lowering costs — groceries, housing, energy, child care",
@@ -1288,7 +1276,6 @@ export const SENATE_RACES = {
       {
         name: "Bert Mizusawa",
         party: "R",
-        status: "primary_pending",
         bio: "Retired Army major general who commanded forces in Afghanistan; former Senate Armed Services staffer and CIA adviser. Leads the GOP field in fundraising (~$376K).",
         platform: [
           "National security",
@@ -1372,9 +1359,7 @@ export const SENATE_RACES = {
 // once its race is updated to real nominees (no more *_pending candidates).
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
 export const PRIMARY_DATES = {
-  KS: "2026-08-04",
-  VA: "2026-08-04",
-  MI: "2026-08-04",
+  MI: "2026-08-04", // Dem primary too close to call as of Aug 5; AP hasn't called it
   TN: "2026-08-06",
   MN: "2026-08-11",
   SC: "2026-08-11", // special GOP primary after Graham's death; runoff ~Aug 25
