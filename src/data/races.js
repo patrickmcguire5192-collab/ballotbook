@@ -11,12 +11,10 @@
 // ratingFromProb in App) so they can never go stale.
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
-// render as chips (several primaries are still ahead: MI Aug 4 [result too
-// close to call / not yet confirmed by AP as of Aug 5], TN Aug 6, MN &
-// SC-special Aug 11, FL/WY Aug 18, OK-D runoff Aug 25, MA Sep 1, NH/RI
-// Sep 8, DE Sep 15).
+// render as chips (several primaries are still ahead: MN & SC-special Aug 11,
+// FL/WY Aug 18, OK-D runoff Aug 25, MA Sep 1, NH/RI Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-05";
+export const SNAPSHOT_DATE = "2026-08-07";
 
 export const SENATE_RACES = {
   AL: {
@@ -575,14 +573,13 @@ export const SENATE_RACES = {
     status: "Open — Gary Peters (D) retiring",
     polymarketSlug: "michigan-senate-election-winner",
     primaryNote:
-      "Democratic primary Aug 4 — final polls show El-Sayed leading Stevens by 9–16; Rogers is unopposed for the GOP.",
+      "Primary was Aug 4 — El-Sayed defeated Stevens by roughly two points (about 49–47%, AP called it Aug 5); Rogers was unopposed for the GOP.",
     summary:
-      "The Aug 4 Democratic primary pits progressive Abdul El-Sayed (Sanders/AOC-backed) against moderate Rep. Haley Stevens, after Mallory McMorrow suspended her campaign in July. El-Sayed leads primary polls decisively, but Stevens polls better against Trump-backed Mike Rogers — an electability tension the general will resolve.",
+      "Progressive Abdul El-Sayed narrowly beat moderate Rep. Haley Stevens in the Aug 4 Democratic primary, decided by about 15,000 votes out of 1.5M+ cast, after Mallory McMorrow suspended her campaign in July. He now faces Trump-backed Mike Rogers, with pre-primary general-election polling showing a close single-digit race.",
     candidates: [
       {
         name: "Abdul El-Sayed",
         party: "D",
-        status: "primary_pending",
         bio: "Physician and epidemiologist; former Detroit health commissioner and Wayne County health director, where he led an effort to relieve up to $700M in medical debt. 2018 gubernatorial candidate; endorsed by Sanders and AOC.",
         platform: [
           "Medicare for All — signature issue",
@@ -591,21 +588,8 @@ export const SENATE_RACES = {
         ],
       },
       {
-        name: "Haley Stevens",
-        party: "D",
-        status: "primary_pending",
-        bio: "U.S. Representative (MI-11) since 2019; former chief of staff to the Obama auto-rescue task force. The moderate in the primary, endorsed by Gov. Whitmer; polls best against Rogers in general matchups.",
-        platform: [
-          "Auto-industry and advanced-manufacturing jobs (CHIPS work)",
-          "Lowering costs incl. prescription drugs",
-          "Reproductive rights",
-          "Protecting Social Security and Medicare",
-        ],
-      },
-      {
         name: "Mike Rogers",
         party: "R",
-        status: "presumptive",
         bio: "Former U.S. Representative and House Intelligence Committee chair; ex-FBI agent and Army veteran. Lost the 2024 Senate race to Elissa Slotkin by ~19,000 votes; unopposed for the GOP nod and Trump-endorsed.",
         platform: [
           "Manufacturing jobs and lower costs, working with Trump",
@@ -1189,13 +1173,12 @@ export const SENATE_RACES = {
     status: "Incumbent Bill Hagerty (R) seeking a second term",
     polymarketSlug: "tennessee-senate-election-winner",
     primaryNote:
-      "Primary Aug 6 — Hagerty unopposed for the GOP; a four-way Democratic field led in name recognition by Marquita Bradshaw.",
-    summary: "Safe Republican.",
+      "Primary was Aug 6 — Hagerty was unopposed for the GOP; Bradshaw won the Democratic primary with 54.8% over Maria Brewer's 18.0% in a five-way field.",
+    summary: "Safe Republican — a rematch of 2020, when Hagerty won by 27 points.",
     candidates: [
       {
         name: "Bill Hagerty",
         party: "R",
-        status: "presumptive",
         bio: "Senator since 2021; former U.S. ambassador to Japan, private-equity executive, and Tennessee economic development commissioner. Trump-endorsed with nearly $9M raised this cycle.",
         platform: [
           "Lower taxes",
@@ -1207,8 +1190,7 @@ export const SENATE_RACES = {
       {
         name: "Marquita Bradshaw",
         party: "D",
-        status: "primary_pending",
-        bio: "Memphis environmental-justice activist and the 2020 Democratic Senate nominee — the first Black woman to win a major-party statewide nomination in Tennessee. Best-known name in the four-way Aug 6 primary.",
+        bio: "Memphis environmental-justice activist and the 2020 Democratic Senate nominee — the first Black woman to win a major-party statewide nomination in Tennessee. Won the Aug 6 primary with 54.8% of the vote.",
         platform: [
           "Environmental justice and climate action",
           "Health care for all",
@@ -1359,8 +1341,6 @@ export const SENATE_RACES = {
 // once its race is updated to real nominees (no more *_pending candidates).
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
 export const PRIMARY_DATES = {
-  MI: "2026-08-04", // Dem primary too close to call as of Aug 5; AP hasn't called it
-  TN: "2026-08-06",
   MN: "2026-08-11",
   SC: "2026-08-11", // special GOP primary after Graham's death; runoff ~Aug 25
   FL: "2026-08-18",
