@@ -11,10 +11,10 @@
 // ratingFromProb in App) so they can never go stale.
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
-// render as chips (several primaries are still ahead: MN & SC-special Aug 11,
-// FL/WY Aug 18, OK-D runoff Aug 25, MA Sep 1, NH/RI Sep 8, DE Sep 15).
+// render as chips (several primaries are still ahead: FL/WY Aug 18,
+// OK-D runoff & SC-special GOP runoff Aug 25, MA Sep 1, NH/RI Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-07";
+export const SNAPSHOT_DATE = "2026-08-12";
 
 export const SENATE_RACES = {
   AL: {
@@ -610,15 +610,14 @@ export const SENATE_RACES = {
     status: "Open — Tina Smith (D) retiring",
     polymarketSlug: "minnesota-senate-election-winner",
     primaryNote:
-      "Primaries Aug 11 — DFL: party-endorsed Flanagan vs. Rep. Angie Craig, widely called a coin flip; GOP: Tafoya leads the primary field.",
+      "Primaries were Aug 11 — Flanagan won the DFL nomination over Rep. Angie Craig, 58.8%–39.7%; Tafoya won the GOP nomination with 50.6%, beating party-endorsed Adam Schwarze and Royce White.",
     summary:
-      "Democrats favored to hold, but both primaries are live: Lt. Gov. Peggy Flanagan (would be the first Native American woman senator) against pragmatist Rep. Angie Craig, while ex-NFL broadcaster Michele Tafoya leads the GOP side despite losing the party endorsement.",
+      "Democrats favored to hold. Lt. Gov. Peggy Flanagan (would be the first Native American woman senator) beat Rep. Angie Craig by nearly 20 points in the Aug 11 DFL primary and faces ex-NFL broadcaster Michele Tafoya, who won the GOP nomination despite losing the party endorsement.",
     candidates: [
       {
         name: "Peggy Flanagan",
         party: "D",
-        status: "primary_pending",
-        bio: "Lieutenant Governor since 2019 and former state legislator; a member of the White Earth Nation. Won the DFL endorsement in May 2026 and is backed by retiring Sen. Tina Smith.",
+        bio: "Lieutenant Governor since 2019 and former state legislator; a member of the White Earth Nation. Won the DFL endorsement in May 2026 and is backed by retiring Sen. Tina Smith; won the Aug 11 primary with 58.8% over Rep. Angie Craig.",
         platform: [
           "Protecting safety-net programs (Medicaid, SNAP, housing, child care)",
           "Abortion rights",
@@ -626,21 +625,9 @@ export const SENATE_RACES = {
         ],
       },
       {
-        name: "Angie Craig",
-        party: "D",
-        status: "primary_pending",
-        bio: "U.S. Representative (MN-02) since 2019 and former medical-device executive; would be the first openly gay woman to represent Minnesota in the Senate. Running an electability-focused campaign aimed at suburban and greater-Minnesota voters.",
-        platform: [
-          "Lowering household costs",
-          "Pragmatic, bipartisan legislating",
-          "Tougher immigration-enforcement posture than her primary rival",
-        ],
-      },
-      {
         name: "Michele Tafoya",
         party: "R",
-        status: "primary_pending",
-        bio: "Former ESPN/NBC broadcaster best known as an NFL Sunday Night Football sideline reporter, now a conservative commentator. Leads GOP primary polling despite losing the party endorsement to Navy SEAL veteran Adam Schwarze; describes herself as a pro-abortion-rights Republican.",
+        bio: "Former ESPN/NBC broadcaster best known as an NFL Sunday Night Football sideline reporter, now a conservative commentator. Won the Aug 11 GOP primary with 50.6% despite losing the party endorsement to Navy SEAL veteran Adam Schwarze; describes herself as a pro-abortion-rights Republican.",
         platform: [
           "Lowering grocery, prescription, and housing costs",
           "Fighting fraud in state-administered programs",
@@ -1075,9 +1062,9 @@ export const SENATE_RACES = {
     status: "Open — Sen. Lindsey Graham died July 11 after winning the GOP primary",
     polymarketSlug: "south-carolina-senate-election-winner",
     primaryNote:
-      "Special GOP primary Aug 11 (runoff likely Aug 25). Late-July Emerson: Norman 22, Graham Nordone 19, Fry 12, Sanford 11. Andrews won the Dem primary June 9.",
+      "Special GOP primary was Aug 11 — Graham Nordone led with 32.7% and Norman advanced with 24.6%; Fry was eliminated in third with 19.6% and conceded. AP-projected runoff is Aug 25. Andrews won the Dem primary June 9.",
     summary:
-      "A race remade by tragedy: Lindsey Graham won his June primary with 56.8%, then died on July 11. Gov. McMaster appointed Graham's sister, Darline Graham Nordone, to hold the seat; she now runs Trump-endorsed in a crowded Aug 11 special primary against Reps. Ralph Norman and Russell Fry. Pediatrician Annie Andrews is the Democratic nominee.",
+      "A race remade by tragedy: Lindsey Graham won his June primary with 56.8%, then died on July 11. Gov. McMaster appointed Graham's sister, Darline Graham Nordone, to hold the seat; she led the Aug 11 special primary and now heads to an Aug 25 Trump-endorsed runoff against Rep. Ralph Norman. Pediatrician Annie Andrews is the Democratic nominee.",
     candidates: [
       {
         name: "Annie Andrews",
@@ -1093,7 +1080,7 @@ export const SENATE_RACES = {
         name: "Ralph Norman",
         party: "R",
         status: "primary_pending",
-        bio: "U.S. Representative (SC-05) since 2017, House Freedom Caucus member, and real-estate developer. Led the late-July Emerson special-primary poll at 22%.",
+        bio: "U.S. Representative (SC-05) since 2017, House Freedom Caucus member, and real-estate developer. Finished second in the Aug 11 special primary with 24.6%, advancing to the Aug 25 runoff.",
         platform: [
           "Deep federal spending cuts",
           "Hardline conservative record",
@@ -1103,25 +1090,16 @@ export const SENATE_RACES = {
         name: "Darline Graham Nordone",
         party: "R",
         status: "primary_pending",
-        bio: "Sister of the late Sen. Lindsey Graham, appointed by Gov. McMaster on July 13 to hold the seat until January. Running Trump-endorsed for the full term; polled second at 19% in late July.",
+        bio: "Sister of the late Sen. Lindsey Graham, appointed by Gov. McMaster on July 13 to hold the seat until January. Running Trump-endorsed for the full term; led the Aug 11 special primary with 32.7%, advancing to the Aug 25 runoff.",
         platform: [
           "Carrying forward her brother's Senate service",
           "Aligned with the Trump administration",
         ],
       },
-      {
-        name: "Russell Fry",
-        party: "R",
-        status: "primary_pending",
-        bio: "U.S. Representative (SC-07) since 2023 and former state legislator from the Grand Strand; polled 12% in late July.",
-        platform: [
-          "Stalwart support for Trump policies",
-          "Conservative House record",
-        ],
-      },
     ],
     polls: [
       { src: "Emerson (GOP special primary)", date: "Jul 28–29, 2026", result: "Norman 22, Graham Nordone 19, Fry 12, Sanford 11" },
+      { src: "Special primary result (AP)", date: "Aug 11, 2026", result: "Graham Nordone 32.7%, Norman 24.6%, Fry 19.6% (eliminated) — runoff Aug 25" },
     ],
   },
   SD: {
@@ -1341,8 +1319,7 @@ export const SENATE_RACES = {
 // once its race is updated to real nominees (no more *_pending candidates).
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
 export const PRIMARY_DATES = {
-  MN: "2026-08-11",
-  SC: "2026-08-11", // special GOP primary after Graham's death; runoff ~Aug 25
+  SC: "2026-08-25", // GOP runoff: Graham Nordone vs. Norman, after Fry was eliminated Aug 11
   FL: "2026-08-18",
   WY: "2026-08-18",
   OK: "2026-08-25", // Democratic runoff
