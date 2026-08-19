@@ -11,10 +11,10 @@
 // ratingFromProb in App) so they can never go stale.
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
-// render as chips (several primaries are still ahead: FL/WY Aug 18,
+// render as chips (several primaries are still ahead:
 // OK-D runoff & SC-special GOP runoff Aug 25, MA Sep 1, NH/RI Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-12";
+export const SNAPSHOT_DATE = "2026-08-19";
 
 export const SENATE_RACES = {
   AL: {
@@ -189,15 +189,14 @@ export const SENATE_RACES = {
     status: "Appointed incumbent Ashley Moody (R) defending Marco Rubio's old seat",
     polymarketSlug: "florida-senate-election-winner",
     primaryNote:
-      "Both primaries Aug 18 — Moody heavily favored on the GOP side; the Democratic race is Vindman vs. Nixon.",
+      "Primaries were Aug 18 — Moody won the GOP primary with about 75% over Chris Gleason; in a major upset, Nixon beat heavily-funded Alex Vindman for the Democratic nomination, roughly 55–45.",
     summary:
-      "Special election for the remainder of Rubio's term. Moody is favored, but the Democratic primary is a real story: impeachment-witness Alex Vindman has raised $16.7M against progressive state Rep. Angie Nixon's ~$625K.",
+      "Special election for the remainder of Rubio's term. Progressive state Rep. Angie Nixon pulled off an upset over impeachment-witness Alex Vindman, who outspent her more than 20-to-1, for the Democratic nomination. She now faces appointed incumbent Ashley Moody, who is favored in the general.",
     candidates: [
       {
         name: "Ashley Moody",
         party: "R",
-        status: "presumptive",
-        bio: "Appointed U.S. Senator since Jan 2025 (named by Gov. DeSantis when Rubio became Secretary of State); previously Florida Attorney General (2019–2025), circuit judge, and federal prosecutor. About $10.8M raised through June 30.",
+        bio: "Appointed U.S. Senator since Jan 2025 (named by Gov. DeSantis when Rubio became Secretary of State); previously Florida Attorney General (2019–2025), circuit judge, and federal prosecutor. Won the Aug 18 GOP primary over Chris Gleason, Ernie Rivera, and Neelam Perry.",
         platform: [
           "Border security and combating fentanyl trafficking (co-led the HALT Fentanyl Act)",
           "Law-and-order record from AG tenure",
@@ -206,22 +205,9 @@ export const SENATE_RACES = {
         ],
       },
       {
-        name: "Alex Vindman",
-        party: "D",
-        status: "primary_pending",
-        bio: "Retired Army lieutenant colonel, Purple Heart recipient, and former NSC official known as a witness in the 2019 impeachment inquiry. Ukrainian-born immigrant and the Democratic field's fundraising leader (~$16.7M).",
-        platform: [
-          "Lowering housing, grocery, and insurance costs — incl. a federal homeowners-insurance backstop",
-          "Adding dental and vision to Medicare; lower drug prices",
-          "Immigration reform with a citizenship pathway for Dreamers",
-          "Pragmatic, bipartisan framing",
-        ],
-      },
-      {
         name: "Angie Nixon",
         party: "D",
-        status: "primary_pending",
-        bio: "Florida state representative from Jacksonville since 2020 and community organizer; a Democratic Socialists of America member running as the primary's progressive choice (~$625K raised through June).",
+        bio: "Florida state representative from Jacksonville since 2020 and community organizer; a Democratic Socialists of America member. Won the Aug 18 Democratic primary over Alex Vindman despite being outraised roughly 20-to-1 (~$625K to his ~$16.7M).",
         platform: [
           "Reinstating ACA subsidies now; Medicare for All long-term",
           "Cracking down on corporate price-gouging; insurance reform",
@@ -1283,15 +1269,14 @@ export const SENATE_RACES = {
     status: "Open — Cynthia Lummis (R) not seeking re-election",
     polymarketSlug: "wyoming-senate-election-winner",
     primaryNote:
-      "Primary Aug 18 — Hageman is the heavy GOP favorite; Byrd faces Billy Benavidez for the Democrats.",
+      "Primary was Aug 18 — Hageman won the GOP primary with 62.7% over runner-up Sam Mead; Byrd won the Democratic primary with about 78% over Billy Benavidez.",
     summary:
       "Safe Republican open seat: Rep. Harriet Hageman — who unseated Liz Cheney in 2022 — was endorsed by Trump within hours of announcing, and by Lummis herself.",
     candidates: [
       {
         name: "Harriet Hageman",
         party: "R",
-        status: "primary_pending",
-        bio: "Wyoming's at-large U.S. representative since 2023, who won the seat by beating Liz Cheney in the 2022 primary; longtime natural-resources and water-rights attorney and 2018 gubernatorial candidate.",
+        bio: "Wyoming's at-large U.S. representative since 2023, who won the seat by beating Liz Cheney in the 2022 primary; longtime natural-resources and water-rights attorney and 2018 gubernatorial candidate. Won the Aug 18 GOP primary over Sam Mead and other challengers.",
         platform: [
           "Defending Wyoming's natural-resource access",
           "Energy and food-production leadership",
@@ -1301,8 +1286,7 @@ export const SENATE_RACES = {
       {
         name: "James Byrd",
         party: "D",
-        status: "primary_pending",
-        bio: "Former state representative from Cheyenne (2009–2019), serving as minority whip and caucus leader; 2018 secretary-of-state candidate.",
+        bio: "Former state representative from Cheyenne (2009–2019), serving as minority whip and caucus leader; 2018 secretary-of-state candidate. Won the Aug 18 Democratic primary over Billy Benavidez.",
         platform: [
           "All-of-the-above energy: nuclear, solar, wind alongside fossil fuels",
           "Representation reflecting Wyoming's values",
@@ -1318,10 +1302,9 @@ export const SENATE_RACES = {
 // calendar has outrun — see src/services/staleness.js. Remove a state's entry
 // once its race is updated to real nominees (no more *_pending candidates).
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
+// FL and WY (both Aug 18) resolved and were removed after confirming results.
 export const PRIMARY_DATES = {
   SC: "2026-08-25", // GOP runoff: Graham Nordone vs. Norman, after Fry was eliminated Aug 11
-  FL: "2026-08-18",
-  WY: "2026-08-18",
   OK: "2026-08-25", // Democratic runoff
   MA: "2026-09-01",
   NH: "2026-09-08",
