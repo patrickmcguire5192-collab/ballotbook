@@ -12,9 +12,9 @@
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
 // render as chips (several primaries are still ahead:
-// OK-D runoff & SC-special GOP runoff Aug 25, MA Sep 1, NH/RI Sep 8, DE Sep 15).
+// MA Sep 1, NH/RI Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-19";
+export const SNAPSHOT_DATE = "2026-08-26";
 
 export const SENATE_RACES = {
   AL: {
@@ -938,9 +938,9 @@ export const SENATE_RACES = {
     status: "Open — Markwayne Mullin resigned in March 2026 to lead DHS",
     polymarketSlug: "oklahoma-senate-election-winner",
     primaryNote:
-      "GOP primary June 16 — Hern won outright with 69.8%; the Democratic runoff (Thomas vs. Priest) is Aug 25.",
+      "GOP primary June 16 — Hern won outright with 69.8%; Thomas won the Aug 25 Democratic runoff over Priest, 61.1%–38.9% (77,944–49,693).",
     summary:
-      "Safe Republican open seat: Rep. Kevin Hern, former Republican Study Committee chair, won the GOP primary outright with Trump's and Thune's endorsements after Mullin left to run Homeland Security.",
+      "Safe Republican open seat: Rep. Kevin Hern, former Republican Study Committee chair, won the GOP primary outright with Trump's and Thune's endorsements after Mullin left to run Homeland Security. Nurse N'Kiyla \"Jasmine\" Thomas won the Aug 25 Democratic runoff to become his opponent.",
     candidates: [
       {
         name: "Kevin Hern",
@@ -955,23 +955,11 @@ export const SENATE_RACES = {
       {
         name: 'N\'Kiyla "Jasmine" Thomas',
         party: "D",
-        status: "primary_pending",
-        bio: "Nurse, active-duty military spouse, and Chickasaw Nation citizen from Ardmore; led the June Democratic primary with ~45% and faces an Aug 25 runoff.",
+        bio: "Nurse, active-duty military spouse, and Chickasaw Nation citizen from Ardmore; won the Aug 25 Democratic runoff over Jim Priest, 61.1%–38.9%, after leading the June primary with ~45%.",
         platform: [
           "Expanding healthcare access",
           "Disability services and family support",
           "Government accountability",
-        ],
-      },
-      {
-        name: "Jim Priest",
-        party: "D",
-        status: "primary_pending",
-        bio: "Longtime Oklahoma employment-law and civil-rights attorney and ordained minister; endorsed by former Oklahoma governors, campaigning on a 'New Fair Deal.'",
-        platform: [
-          "Lowering costs for working families",
-          "Rural hospitals and mental-health care",
-          "Banning congressional stock trading",
         ],
       },
     ],
@@ -1048,9 +1036,9 @@ export const SENATE_RACES = {
     status: "Open — Sen. Lindsey Graham died July 11 after winning the GOP primary",
     polymarketSlug: "south-carolina-senate-election-winner",
     primaryNote:
-      "Special GOP primary was Aug 11 — Graham Nordone led with 32.7% and Norman advanced with 24.6%; Fry was eliminated in third with 19.6% and conceded. AP-projected runoff is Aug 25. Andrews won the Dem primary June 9.",
+      "Special GOP primary was Aug 11, runoff Aug 25 — Graham Nordone won the Trump-endorsed runoff over Norman, 52.5%–47.5% (193,396–175,327). Andrews won the Dem primary June 9 with 61.5%.",
     summary:
-      "A race remade by tragedy: Lindsey Graham won his June primary with 56.8%, then died on July 11. Gov. McMaster appointed Graham's sister, Darline Graham Nordone, to hold the seat; she led the Aug 11 special primary and now heads to an Aug 25 Trump-endorsed runoff against Rep. Ralph Norman. Pediatrician Annie Andrews is the Democratic nominee.",
+      "A race remade by tragedy: Lindsey Graham won his June primary with 56.8%, then died on July 11. Gov. McMaster appointed Graham's sister, Darline Graham Nordone, to hold the seat; she won the Trump-endorsed Aug 25 runoff over Rep. Ralph Norman, 52.5%–47.5%, and faces pediatrician Annie Andrews, the Democratic nominee, in November.",
     candidates: [
       {
         name: "Annie Andrews",
@@ -1063,20 +1051,9 @@ export const SENATE_RACES = {
         ],
       },
       {
-        name: "Ralph Norman",
-        party: "R",
-        status: "primary_pending",
-        bio: "U.S. Representative (SC-05) since 2017, House Freedom Caucus member, and real-estate developer. Finished second in the Aug 11 special primary with 24.6%, advancing to the Aug 25 runoff.",
-        platform: [
-          "Deep federal spending cuts",
-          "Hardline conservative record",
-        ],
-      },
-      {
         name: "Darline Graham Nordone",
         party: "R",
-        status: "primary_pending",
-        bio: "Sister of the late Sen. Lindsey Graham, appointed by Gov. McMaster on July 13 to hold the seat until January. Running Trump-endorsed for the full term; led the Aug 11 special primary with 32.7%, advancing to the Aug 25 runoff.",
+        bio: "Sister of the late Sen. Lindsey Graham, appointed by Gov. McMaster on July 13 to hold the seat until January. Running Trump-endorsed for the full term; won the Aug 25 GOP runoff over Rep. Ralph Norman, 52.5%–47.5%, after leading the Aug 11 special primary with 32.7%.",
         platform: [
           "Carrying forward her brother's Senate service",
           "Aligned with the Trump administration",
@@ -1303,9 +1280,8 @@ export const SENATE_RACES = {
 // once its race is updated to real nominees (no more *_pending candidates).
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
 // FL and WY (both Aug 18) resolved and were removed after confirming results.
+// SC and OK (both Aug 25 runoffs) resolved and were removed after confirming results.
 export const PRIMARY_DATES = {
-  SC: "2026-08-25", // GOP runoff: Graham Nordone vs. Norman, after Fry was eliminated Aug 11
-  OK: "2026-08-25", // Democratic runoff
   MA: "2026-09-01",
   NH: "2026-09-08",
   RI: "2026-09-08",
