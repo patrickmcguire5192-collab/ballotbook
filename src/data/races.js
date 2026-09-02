@@ -14,7 +14,7 @@
 // render as chips (several primaries are still ahead:
 // MA Sep 1, NH/RI Sep 8, DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-08-26";
+export const SNAPSHOT_DATE = "2026-09-02";
 
 export const SENATE_RACES = {
   AL: {
@@ -508,18 +508,17 @@ export const SENATE_RACES = {
   },
   MA: {
     seat: "Class 2",
-    status: "Incumbent Ed Markey (D) faces a primary challenge from Rep. Seth Moulton",
+    status: "Incumbent Ed Markey (D) seeking a sixth term",
     polymarketSlug: "massachusetts-senate-election-winner",
     primaryNote:
-      "Primaries Sep 1 — the Markey–Moulton Democratic primary is the real contest; Deaton is the MassGOP-endorsed Republican.",
+      "Primary was Sep 1 — Markey defeated Moulton for the Democratic nomination, 64.9%–35.1%; Deaton was unopposed for the GOP.",
     summary:
-      "Safe Democratic in November, but the Sep 1 primary is a marquee generational fight: 80-year-old Green New Deal author Ed Markey vs. 47-year-old Marine veteran Seth Moulton.",
+      "Safe Democratic. 80-year-old Green New Deal author Ed Markey turned back a generational-change challenge from Rep. Seth Moulton and faces 2024 nominee John Deaton, who lost to Sen. Elizabeth Warren by about 20 points that cycle.",
     candidates: [
       {
         name: "Ed Markey",
         party: "D",
-        status: "primary_pending",
-        bio: "Senator since a 2013 special election after 37 years in the House. Co-authored the Green New Deal resolution; one of the Senate's most prominent climate progressives. At 80, faces a generational-change challenge.",
+        bio: "Senator since a 2013 special election after 37 years in the House. Co-authored the Green New Deal resolution; one of the Senate's most prominent climate progressives. Defeated Rep. Seth Moulton's generational-change challenge in the Sep 1 primary, 64.9%–35.1%.",
         platform: [
           "Climate action and the Green New Deal",
           "Defending progressive priorities",
@@ -527,21 +526,9 @@ export const SENATE_RACES = {
         ],
       },
       {
-        name: "Seth Moulton",
-        party: "D",
-        status: "primary_pending",
-        bio: "U.S. Representative (MA-06) since 2015 and Marine veteran with four Iraq tours; briefly ran for president in 2020. Launched his challenge in October 2025 on a 'generational shift in leadership' message.",
-        platform: [
-          "Generational change in Democratic leadership",
-          "National security and veterans' issues",
-          "A more pragmatic, centrist direction",
-        ],
-      },
-      {
         name: "John Deaton",
         party: "R",
-        status: "presumptive",
-        bio: "Attorney, Marine veteran, and cryptocurrency advocate; the 2024 GOP nominee against Sen. Elizabeth Warren. MassGOP-endorsed since November 2025, largely clearing the field.",
+        bio: "Attorney, Marine veteran, and cryptocurrency advocate; the 2024 GOP nominee against Sen. Elizabeth Warren, whom he lost to by about 20 points. Ran unopposed for the 2026 GOP nomination after clearing the field with a November 2025 MassGOP endorsement.",
         platform: [
           "Economic affordability and growth",
           "Friendlier crypto/fintech regulation",
@@ -1281,8 +1268,8 @@ export const SENATE_RACES = {
 // After the last date here (DE, Sep 15) every field is set until Nov 3.
 // FL and WY (both Aug 18) resolved and were removed after confirming results.
 // SC and OK (both Aug 25 runoffs) resolved and were removed after confirming results.
+// MA (Sep 1) resolved and was removed after confirming results.
 export const PRIMARY_DATES = {
-  MA: "2026-09-01",
   NH: "2026-09-08",
   RI: "2026-09-08",
   DE: "2026-09-15",
