@@ -11,10 +11,9 @@
 // ratingFromProb in App) so they can never go stale.
 //
 // Candidate `status`: omitted = nominee; "presumptive" and "primary_pending"
-// render as chips (several primaries are still ahead:
-// MA Sep 1, NH/RI Sep 8, DE Sep 15).
+// render as chips (remaining primaries: RI Sep 8 [unconfirmed], DE Sep 15).
 
-export const SNAPSHOT_DATE = "2026-09-02";
+export const SNAPSHOT_DATE = "2026-09-09";
 
 export const SENATE_RACES = {
   AL: {
@@ -744,15 +743,14 @@ export const SENATE_RACES = {
     status: "Open — Jeanne Shaheen (D) retiring",
     polymarketSlug: "new-hampshire-senate-election-winner",
     primaryNote:
-      "Primaries Sep 8 — Pappas dominates the Democratic side; Trump-endorsed John E. Sununu leads Scott Brown ~59–20 for the GOP.",
+      "Primary was Sep 8 — Sununu routed Brown for the GOP nod, ~70–25; Pappas beat Manzur for the Democratic nomination, ~65–33.",
     summary:
-      "Rep. Chris Pappas cleared the Democratic field, but the GOP recruited its strongest possible name: former Sen. John E. Sununu, attempting to reclaim the seat he lost to Shaheen in 2008. The latest UNH general poll: Pappas +3 — closer than earlier spring numbers.",
+      "Rep. Chris Pappas won the Democratic nomination, and the GOP nominated its strongest possible name: former Sen. John E. Sununu, attempting to reclaim the seat he lost to Shaheen in 2008. The latest UNH general poll: Pappas +3 — closer than earlier spring numbers.",
     candidates: [
       {
         name: "Chris Pappas",
         party: "D",
-        status: "presumptive",
-        bio: "U.S. Representative (NH-01) since 2019; family runs Manchester's Puritan Backroom restaurant. Endorsed by Shaheen and Sen. Hassan; led his nearest primary rival by 40+ in June UNH polling.",
+        bio: "U.S. Representative (NH-01) since 2019; family runs Manchester's Puritan Backroom restaurant. Endorsed by Shaheen and Sen. Hassan; won the Sep 8 Democratic primary over Karishma Manzur, ~65–33.",
         platform: [
           "Housing affordability and supply",
           "Extending ACA premium credits; reversing Medicaid cuts",
@@ -762,24 +760,12 @@ export const SENATE_RACES = {
       {
         name: "John E. Sununu",
         party: "R",
-        status: "primary_pending",
-        bio: "Former U.S. senator (2003–2009) and three-term congressman; son of former Gov. John H. Sununu and brother of former Gov. Chris Sununu. Entered in January 2026 seeking his old seat; Trump-endorsed.",
+        bio: "Former U.S. senator (2003–2009) and three-term congressman; son of former Gov. John H. Sununu and brother of former Gov. Chris Sununu. Trump-endorsed; won the Sep 8 GOP primary over Scott Brown, ~70–25.",
         platform: [
           "Reducing federal spending and the debt",
           "Lower cost of living; no new taxes",
           "Protecting Medicare and Social Security",
           "Energy independence",
-        ],
-      },
-      {
-        name: "Scott Brown",
-        party: "R",
-        status: "primary_pending",
-        bio: "Former Massachusetts senator (2010–2013) and NH's 2014 GOP Senate nominee; U.S. ambassador to New Zealand in Trump's first term. First major Republican in the race but trails Sununu badly in primary polls.",
-        platform: [
-          "Affordability with an energy focus (natural gas, Seabrook nuclear)",
-          "Border security",
-          "Experience-and-independence pitch",
         ],
       },
     ],
@@ -1269,8 +1255,10 @@ export const SENATE_RACES = {
 // FL and WY (both Aug 18) resolved and were removed after confirming results.
 // SC and OK (both Aug 25 runoffs) resolved and were removed after confirming results.
 // MA (Sep 1) resolved and was removed after confirming results.
+// NH (Sep 8) resolved and was removed after confirming results.
+// RI (Sep 8) has NOT been removed: primary results could not be confirmed
+// from two independent sources as of this snapshot — left as primary_pending.
 export const PRIMARY_DATES = {
-  NH: "2026-09-08",
   RI: "2026-09-08",
   DE: "2026-09-15",
 };
